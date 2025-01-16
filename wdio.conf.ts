@@ -2,6 +2,7 @@ import type { Options } from '@wdio/types'
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+
 // Will only work if the execution is not in Headless mode
 const debuggerOnFailure = true
 
@@ -72,7 +73,8 @@ export const config: Options.Testrunner = {
                                 domain: 'kolkata.testrail.io',
                                 username: process.env.TEST_USERNAME,
                                 apiToken: process.env.API_TOKEN,
-                                runName: 'Automated schedule execution on 1/16/2025',
+                                //runName: 'Automated schedule execution on 1/16/2025',
+                                runName: process.env.TESTRAIL_RUN_NAME,
                                 oneReport: true,
                                 includeAll: false,
                                 // caseIdTagPrefix: '' // used only for multi-platform Cucumber Scenarios
