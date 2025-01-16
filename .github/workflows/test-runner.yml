@@ -1,8 +1,7 @@
 name: Run WebDriverIO Tests
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight (example schedule)
+  workflow_dispatch:
 
 jobs:
   test:
