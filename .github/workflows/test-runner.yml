@@ -1,7 +1,17 @@
 name: Run WebDriverIO Tests
 
 on:
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      scenario-tags:
+        required: true
+        type: string
+      spec:
+        required: false
+        type: string
+      is-alt-run:
+        required: false
+        type: string
 
 jobs:
   test:
@@ -21,7 +31,17 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
+        
+      - name: Trigger ${{ inputs.scenario-tags }} Script
+        uses: nick-fields/retry@v2
+        if: success() || failure()
+        with:
+          timeout_minutes: 100
+          max_attempts: 2
+          retry_on: error
+          command: |
+            export HEADLESS=true
+            npx wdio run ./wdio.conf.js --spec=${{ inputs.spec }} --mochaOpts.grep ${{ inputs.scenario-tags }}
       - name: Run WebDriverIO Tests
         env:
           TESTRAIL_RUN_NAME: ${{ env.TESTRAIL_RUN_NAME }}
