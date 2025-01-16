@@ -37,7 +37,7 @@ jobs:
         if: success() || failure()
         with:
           timeout_minutes: 100
-          max_attempts: 2
+          max_attempts: 1
           retry_on: error
           command: |
             export HEADLESS=true
