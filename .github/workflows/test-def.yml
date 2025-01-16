@@ -1,0 +1,25 @@
+# The purpose of this workflow is to define the scenario-hierarchy, scenario-groupings, execution-timings, and execution orders
+
+name: Enhancement on webdriverIo script Execution
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "00 2 * * 0-5"
+
+jobs:
+  Application-Script-Execution:
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        scenario-tags:
+          - LOGIN
+        spec:
+          #test/scenarios/amendApplication
+          - test/scenarios/LoginPage/Login.ts
+
+    uses: ./.github/workflows/test-runner.yml
+    with:
+      scenario-tags: ${{ matrix.scenario-tags }}
+      spec: ${{ matrix.spec }}
