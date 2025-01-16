@@ -1,6 +1,6 @@
 # The purpose of this workflow is to define the scenario-hierarchy, scenario-groupings, execution-timings, and execution orders
 
-name: Enhancement on webdriverIo script Execution
+name: TestRail impletation on webdriverIo script Execution
 
 on:
   workflow_dispatch:
