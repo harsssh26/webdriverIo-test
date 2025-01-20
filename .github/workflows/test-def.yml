@@ -4,8 +4,8 @@ name: TestRail impletation on webdriverIo script Execution
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "00 2 * * 0-5"
+  # schedule:
+  #   - cron: "00 2 * * 0-5"
 
 jobs:
   Application-Script-Execution:
