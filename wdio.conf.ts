@@ -1,19 +1,12 @@
+import logger from './test/utils/winston-logger.ts';
 import type { Options } from '@wdio/types'
 import * as dotenv from 'dotenv';
 dotenv.config();
 
 
 // Will only work if the execution is not in Headless mode
-const debuggerOnFailure = true
+// const debuggerOnFailure = true
 
-// Environment and Execution details
-// export const isHeadless = process.env.HEADLESS === 'true' ? 'headless' : 'disable-infobars'
-// export const environment = process.env.ORG ?? 'sit'
-// export const alt_user = process.env.ALT_USER ?? 'false'
-// export const microsoftUser = process.env.USERNAME ?? 'username'
-// export const microsoftPassword = process.env.PASSWORD ?? 'password'
-
-//const logLevel = microsoftPassword === 'password' ? 'info' : 'error'
 let orgSystemDate: string | undefined
 export function setOrgSystemDate(newDate: string) {
         orgSystemDate = newDate
@@ -169,7 +162,17 @@ export const config: Options.Testrunner = {
                 ui: 'bdd',
                 timeout: 6000000
         },
-
+        beforeTest: async (test) => {
+                logger.info(`Starting test: ${test.title}`);
+              },
+            
+        afterTest: async (test,{ passed }) => {
+                if (passed) {
+                  logger.info(`Test Passed: ${test.title}`);
+                } else {
+                  logger.error(`Test Failed: ${test.title}`);
+                }
+              },
         //
         // =====
         // Hooks

@@ -1,6 +1,5 @@
 import { $ } from '@wdio/globals'
 import Page from './page.ts'
-import users from '../config/users.ts';
 
 class LoginPage extends Page {
         /**
