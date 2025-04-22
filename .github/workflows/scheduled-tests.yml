@@ -2,8 +2,7 @@ name: Scheduled WebDriverIO Tests
 
 on:
   schedule:
-    - cron: '0 4 * * *'   # 9:30 AM IST / 4 AM UTC / 12 AM EST
-    - cron: '0 6 * * *'   # 11:30 AM IST / 6 AM UTC / 2 AM EST
+    - cron: '30 6 * * *'   # 12:00 PM IST / 6:30 AM UTC / 2:30 AM EST
   workflow_dispatch:
 
 jobs:
