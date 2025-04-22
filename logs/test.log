@@ -63,3 +63,15 @@
 {"level":"error","message":"Test Failed: C2497 Test case validate contract details","timestamp":"2025-03-07T11:25:36.436Z"}
 {"level":"info","message":"Starting test: C2498 Validate Amend application","timestamp":"2025-03-07T11:25:36.438Z"}
 {"level":"error","message":"Test Failed: C2498 Validate Amend application","timestamp":"2025-03-07T11:25:37.441Z"}
+{"level":"info","message":"Starting test: C2491 Login to salesforce validation","timestamp":"2025-04-22T06:03:08.319Z"}
+{"level":"error","message":"Test Failed: C2491 Login to salesforce validation","timestamp":"2025-04-22T06:03:10.447Z"}
+{"level":"info","message":"Starting test: C2492 Test Case Amend Application","timestamp":"2025-04-22T06:03:10.447Z"}
+{"level":"error","message":"Test Failed: C2492 Test Case Amend Application","timestamp":"2025-04-22T06:03:11.448Z"}
+{"level":"info","message":"Starting test: C2493 Test case Application creation","timestamp":"2025-04-22T06:03:11.450Z"}
+{"level":"info","message":"Starting test: C2494 Test case Balance Transfer","timestamp":"2025-04-22T06:03:21.552Z"}
+{"level":"error","message":"Test Failed: C2494 Test case Balance Transfer","timestamp":"2025-04-22T06:03:21.560Z"}
+{"level":"info","message":"Starting test: C2495 Test case Service Cloud","timestamp":"2025-04-22T06:03:21.562Z"}
+{"level":"info","message":"Starting test: C2496 Test case application convert to contract","timestamp":"2025-04-22T06:03:21.564Z"}
+{"level":"info","message":"Starting test: C2497 Test case validate contract details","timestamp":"2025-04-22T06:03:21.565Z"}
+{"level":"error","message":"Test Failed: C2497 Test case validate contract details","timestamp":"2025-04-22T06:03:21.568Z"}
+{"level":"info","message":"Starting test: C2498 Validate Amend application","timestamp":"2025-04-22T06:03:21.568Z"}
