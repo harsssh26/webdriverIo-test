@@ -1,11 +1,9 @@
-# The purpose of this workflow is to define the scenario-hierarchy, scenario-groupings, execution-timings, and execution orders
-
-name: TestRail impletation on webdriverIo script Execution
+name: TestRail implementation on WebDriverIO script Execution
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "00 2 * * 0-5"
+  # schedule:
+  #   - cron: "00 2 * * 0-5"
 
 jobs:
   Application-Script-Execution:
@@ -16,7 +14,6 @@ jobs:
         scenario-tags:
           - LOGIN
         spec:
-          #test/scenarios/amendApplication
           - test/scenarios/LoginPage/Login.ts
 
     uses: ./.github/workflows/test-runner.yml

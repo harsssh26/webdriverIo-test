@@ -1,9 +1,9 @@
 name: Scheduled WebDriverIO Tests
 
 on:
-  schedule:
-    - cron: '30 6 * * *'   # 12:00 PM IST / 6:30 AM UTC / 2:30 AM EST
   workflow_dispatch:
+  # schedule:
+  #   - cron: '30 6 * * *'   # 12:00 PM IST / 6:30 AM UTC / 2:30 AM EST
 
 jobs:
   run-tests:
@@ -22,8 +22,7 @@ jobs:
         run: npm ci
 
       - name: Run WebDriverIO tests
-        run: |
-          npm run test
+        run: npm run test
 
       - name: Archive Test Logs
         if: always()
